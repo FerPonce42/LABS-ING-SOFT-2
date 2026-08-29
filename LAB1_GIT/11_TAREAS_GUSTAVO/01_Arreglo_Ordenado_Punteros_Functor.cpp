@@ -10,7 +10,7 @@ una add (3); dsadas
 el 3 se pone al inicio del arreglo.
 
 actualmente:
-3 CUANDO VEEEEEEEMOS
+3 
 
 add(5)
 
