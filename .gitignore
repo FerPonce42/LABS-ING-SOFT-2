@@ -1,0 +1,18 @@
+# --- Basura de Compilación y Ejecutables de C++ ---
+*.o
+*.obj
+*.out
+*.exe
+*.gch
+.vscode/
+
+# --- Archivos de Sistema y Entorno ---
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# --- Basura común de otros lenguajes (por si acaso) ---
+__pycache__/
+*.pyc
+node_modules/

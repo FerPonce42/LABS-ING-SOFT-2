@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_postulantes.css') }}"> <!-- Vinculo a CSS exclusivo -->
+    <title>Postulantes</title>
+</head>
+<body class="admin-postulantes-body"> <!-- Clase para aplicar estilos exclusivos -->
+    <h1 class="admin-postulantes-h1">Postulantes</h1> <!-- Encabezado con clase exclusiva -->
+    
+    <table class="admin-postulantes-table" border="1"> <!-- Tabla con clase exclusiva -->
+        <thead>
+            <tr>
+                <th class="admin-postulantes-th">Nombre</th> <!-- Encabezado de columna con clase exclusiva -->
+                <th class="admin-postulantes-th">Apellido Paterno</th>
+                <th class="admin-postulantes-th">Apellido Materno</th>
+                <th class="admin-postulantes-th">Email</th>
+                <th class="admin-postulantes-th">Celular</th>
+                <th class="admin-postulantes-th">Documento</th>
+                <th class="admin-postulantes-th">Carrera</th>
+                <th class="admin-postulantes-th">Estado</th>
+                <th class="admin-postulantes-th">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for postulante in postulantes %}
+            <tr class="admin-postulantes-tr"> <!-- Fila de postulante con clase exclusiva -->
+                <td class="admin-postulantes-td">{{ postulante[1] }}</td> <!-- Celda de postulante con clase exclusiva -->
+                <td class="admin-postulantes-td">{{ postulante[2] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[3] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[4] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[5] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[6] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[7] }}</td>
+                <td class="admin-postulantes-td">{{ postulante[8] }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('aceptar_postulante', id=postulante[0]) }}">
+                        <button type="submit" class="admin-postulantes-button">Aceptar</button> <!-- Botón con clase exclusiva -->
+                    </form>
+                    <form method="POST" action="{{ url_for('rechazar_postulante', id=postulante[0]) }}">
+                        <button type="submit" class="admin-postulantes-button">Rechazar</button> <!-- Botón con clase exclusiva -->
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
